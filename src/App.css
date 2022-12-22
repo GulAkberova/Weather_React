@@ -53,20 +53,17 @@ header{
 }
 .weather_body{
   padding: 30px;
-  
 }
 .weather_menu{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 .weather_menu p{
   padding: 15px 0px;
   font-size: 12px;
 }
-
 /* ______________Loading____________________ */
 :root {
   --color-bg: #eaeaea;
@@ -74,7 +71,6 @@ header{
   --loader-size: 100px;
   --loader-speed: 500ms;
 }
-
 .loader {
   --loader-height: calc(var(--loader-size) / 7);
   display: flex;
@@ -94,7 +90,6 @@ header{
   height: var(--loader-height);
   border-radius: 50%;
   background: var(--color-loader);
-  
   animation-name: to-right;
   animation-duration: var(--loader-speed);
   animation-iteration-count: infinite;
@@ -124,18 +119,3 @@ header{
     transform: scale(1);
   }
 }
-
-/* html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-} */
-
-/* body {
-  background-color: var(--color-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
