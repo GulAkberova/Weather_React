@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import Header from "./components/Header";
+import Weather from "./components/Weather";
 
 function App() {
+  const [all, setAll] = useState({});
+  const[city,setCity]=useState('London')
+  const[loading,setLoading]=useState(false)
+  useEffect(() => {
+    setLoading(true)
+    fetch(
+      `http://api.weatherapi.com/v1/current.json?key=27d0dcc40fc94464b4d101455222212&q=${city || 'London'}&aqi=no`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setAll(data);
+        setLoading(false)
+      });
+  }, [city]);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header   />
+      <Weather all={all} city={city} setCity={setCity} loading={loading} setLoading={setLoading}/>
+    </>
   );
 }
 
