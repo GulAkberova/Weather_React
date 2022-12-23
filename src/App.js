@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     setLoading(true)
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=27d0dcc40fc94464b4d101455222212&q=${city || 'London'}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=27d0dcc40fc94464b4d101455222212&q=${city || 'London'}&aqi=no/`
     )
       .then((res) => res.json())
       .then((data) => {
